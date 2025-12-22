@@ -1,0 +1,74 @@
+import folium
+import pandas as pd
+
+# ---------------------------------------------------------
+# [1] 여기에 방문할 장소를 입력하세요 (엑셀이나 CSV 필요 없음)
+# ---------------------------------------------------------
+data = [
+    {"name": "프라하 공항", "lat": 50.1018, "lon": 14.2632},
+    {"name": "숙소 (호텔)", "lat": 50.0880, "lon": 14.4208},
+]
+
+# ---------------------------------------------------------
+# [2] 지도 만들기 (구글맵 스타일 적용)
+# ---------------------------------------------------------
+# 중심점 잡기
+start_lat = data[0]['lat']
+start_lon = data[0]['lon']
+
+# 지도 생성 (확대/축소 됨)
+m = folium.Map(location=[start_lat, start_lon], zoom_start=13, tiles=None)
+
+# 구글 맵 타일 씌우기
+folium.TileLayer(
+    tiles='http://mt0.google.com/vt/lyrs=m&hl=ko&x={x}&y={y}&z={z}',
+    attr='Google',
+    name='Google Maps',
+    overlay=False,
+    control=True
+).add_to(m)
+
+# ---------------------------------------------------------
+# [3] 마커와 선 그리기
+# ---------------------------------------------------------
+points = []
+for i, loc in enumerate(data):
+    # 마커
+    folium.Marker(
+        [loc['lat'], loc['lon']],
+        popup=loc['name'],
+        tooltip=f"{i+1}. {loc['name']}",
+        icon=folium.Icon(color='red', icon='info-sign')
+    ).add_to(m)
+    points.append([loc['lat'], loc['lon']])
+
+# 경로 선 긋기
+for i in range(len(points)-1):
+    p1 = points[i]
+    p2 = points[i+1]
+    
+    # 구글맵 길찾기 링크
+    g_url = f"https://www.google.com/maps/dir/?api=1&origin={p1[0]},{p1[1]}&destination={p2[0]},{p2[1]}&travelmode=transit"
+    
+    html = f'''
+    <div style="font-family: sans-serif; text-align: center; width: 120px;">
+        <p style="margin: 5px 0; font-weight: bold;">{data[i]['name']} → {data[i+1]['name']}</p>
+        <a href="{g_url}" target="_blank" style="display: block; background-color: #4285F4; color: white; padding: 6px; text-decoration: none; border-radius: 4px; font-size: 12px;">
+            🚌 길찾기 클릭
+        </a>
+    </div>
+    '''
+    
+    folium.PolyLine(
+        locations=[p1, p2],
+        color="#4285F4",
+        weight=5,
+        opacity=0.8,
+        popup=folium.Popup(html, max_width=200)
+    ).add_to(m)
+
+# ---------------------------------------------------------
+# [4] 파일로 저장 (핵심!)
+# ---------------------------------------------------------
+m.save("index.html")
+print("지도 파일(index.html)이 생성되었습니다! GitHub에 올리세요.")
