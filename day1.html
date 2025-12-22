@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_48a25fcd37210c528d974c0b897a34df {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_48a25fcd37210c528d974c0b897a34df" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_48a25fcd37210c528d974c0b897a34df = L.map(
+                "map_48a25fcd37210c528d974c0b897a34df",
+                {
+                    center: [50.1018, 14.2632],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9bb06055d2dbd36b0392d2aacb146569 = L.tileLayer(
+                "http://mt0.google.com/vt/lyrs=m\u0026hl=ko\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Google",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9bb06055d2dbd36b0392d2aacb146569.addTo(map_48a25fcd37210c528d974c0b897a34df);
+        
+    
+            var marker_ca6eb8dd986916ffb58f11f0f743601a = L.marker(
+                [50.1018, 14.2632],
+                {
+}
+            ).addTo(map_48a25fcd37210c528d974c0b897a34df);
+        
+    
+            var icon_c81835e1df44d5ad191b1cc791f8e1bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62f04be400a6ed7e6e26ec46872583c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96e7512d455eaf8297db18291ea9f20e = $(`<div id="html_96e7512d455eaf8297db18291ea9f20e" style="width: 100.0%; height: 100.0%;">프라하 공항</div>`)[0];
+                popup_62f04be400a6ed7e6e26ec46872583c2.setContent(html_96e7512d455eaf8297db18291ea9f20e);
+            
+        
+
+        marker_ca6eb8dd986916ffb58f11f0f743601a.bindPopup(popup_62f04be400a6ed7e6e26ec46872583c2)
+        ;
+
+        
+    
+    
+            marker_ca6eb8dd986916ffb58f11f0f743601a.bindTooltip(
+                `<div>
+                     1. 프라하 공항
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca6eb8dd986916ffb58f11f0f743601a.setIcon(icon_c81835e1df44d5ad191b1cc791f8e1bf);
+            
+    
+            var marker_bf66dba6acd306c037cc7333454808f7 = L.marker(
+                [50.088, 14.4208],
+                {
+}
+            ).addTo(map_48a25fcd37210c528d974c0b897a34df);
+        
+    
+            var icon_6f42de6739507819bc7792163ab662b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4da1b3b24abb418c504ff4d232fd3357 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90135ce99fc2430d232df2d08368c3ef = $(`<div id="html_90135ce99fc2430d232df2d08368c3ef" style="width: 100.0%; height: 100.0%;">숙소 (호텔)</div>`)[0];
+                popup_4da1b3b24abb418c504ff4d232fd3357.setContent(html_90135ce99fc2430d232df2d08368c3ef);
+            
+        
+
+        marker_bf66dba6acd306c037cc7333454808f7.bindPopup(popup_4da1b3b24abb418c504ff4d232fd3357)
+        ;
+
+        
+    
+    
+            marker_bf66dba6acd306c037cc7333454808f7.bindTooltip(
+                `<div>
+                     2. 숙소 (호텔)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf66dba6acd306c037cc7333454808f7.setIcon(icon_6f42de6739507819bc7792163ab662b3);
+            
+    
+            var poly_line_a77abf3782a1835c917757290592d03a = L.polyline(
+                [[50.1018, 14.2632], [50.088, 14.4208]],
+                {"bubblingMouseEvents": true, "color": "#4285F4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#4285F4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_48a25fcd37210c528d974c0b897a34df);
+        
+    
+        var popup_4a116fd0c53f4e2516732eb9f190686d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_acc1e05374c51a8bebdf7710d3d2b815 = $(`<div id="html_acc1e05374c51a8bebdf7710d3d2b815" style="width: 100.0%; height: 100.0%;">     <div style="font-family: sans-serif; text-align: center; width: 120px;">         <p style="margin: 5px 0; font-weight: bold;">프라하 공항 → 숙소 (호텔)</p>         <a href="https://www.google.com/maps/dir/?api=1&origin=50.1018,14.2632&destination=50.088,14.4208&travelmode=transit" target="_blank" style="display: block; background-color: #4285F4; color: white; padding: 6px; text-decoration: none; border-radius: 4px; font-size: 12px;">             🚌 길찾기 클릭         </a>     </div>     </div>`)[0];
+                popup_4a116fd0c53f4e2516732eb9f190686d.setContent(html_acc1e05374c51a8bebdf7710d3d2b815);
+            
+        
+
+        poly_line_a77abf3782a1835c917757290592d03a.bindPopup(popup_4a116fd0c53f4e2516732eb9f190686d)
+        ;
+
+        
+    
+</script>
+</html>
